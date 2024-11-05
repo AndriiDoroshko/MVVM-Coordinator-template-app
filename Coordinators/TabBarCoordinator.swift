@@ -23,9 +23,8 @@ class TabBarCoordinator: Coordinator {
     }
     
     func start() {
-        let homeCoordinator = HomeCoordinator()
+        let homeCoordinator = HomeCoordinator() // Do not pass navigationController to HomeCoordinator initializer
         children.append(homeCoordinator)
-        
         children.forEach { $0.start() }
         
         let tabBarController = TabBarController()
